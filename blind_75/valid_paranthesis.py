@@ -38,7 +38,7 @@ def valid_paranthesis(s):
                 return False
             if each_s == "]" and lc != "[":
                 return False
-    return True
+    return True if len(stk) == 0 else False
 
 print(valid_paranthesis("()"))
 print(valid_paranthesis("()[]{}"))
