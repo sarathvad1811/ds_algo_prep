@@ -105,3 +105,21 @@ def tree_sum_bfs(root):
     return tree_sum
         
 print(tree_sum_bfs(root))
+
+def min_num_tree(root):
+    if not root: return float("inf")
+        
+    return min(root.value, min_num_tree(root.left), min_num_tree(root.right))
+    
+print(min_num_tree(root))
+
+def max_path_sum(root):
+    if not root: return float("-inf")
+    if not root.left and not root.right: return root.value
+    
+    left_subtree_max = max_path_sum(root.left)
+    right_subtree_max = max_path_sum(root.right)
+    
+    return root.value + max(left_subtree_max, right_subtree_max)
+
+print(max_path_sum(root))
